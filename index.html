@@ -2,7 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠</text></svg>">
+<meta name="theme-color" content="#0d1117">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta property="og:title" content="Base64 Encoder / Decoder - 免费Online Tools — DevKit Tools">
+<meta property="og:description" content="在线 Base64 编Decode工具 - 文本/图片 Base64 EncodeDecode，支持文件Upload">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://479464887-rgb.github.io/base64-tool/">
+<meta name="twitter:card" content="summary_large_image">
 <title>Base64 Encoder / Decoder - 免费Online Tools</title>
 <meta name="description" content="在线 Base64 编Decode工具 - 文本/图片 Base64 EncodeDecode，支持文件Upload">
 <style>*{margin:0;padding:0;box-sizing:border-box}
@@ -20,6 +27,9 @@ footer a{color:#58a6ff;text-decoration:none;margin:0 8px}
 input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!important}
 .btn{font-family:inherit}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Base64 Encoder / Decoder - 免费Online Tools","description":"在线 Base64 编Decode工具 - 文本/图片 Base64 EncodeDecode，支持文件Upload","url":"https://479464887-rgb.github.io/base64-tool/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
 </head>
 <body>
 <header>
@@ -49,7 +59,9 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!import
   <span>·</span>
   <span>© 2026 DevKit</span>
 </footer>
-<script>let mode='encode';
+<script>
+'use strict';
+let mode='encode';
 function switchTab(m){mode=m;document.querySelectorAll('.tab-btn').forEach(b=>{b.style.borderColor='#30363d';b.style.background='#161b22';b.style.color='#8b949e';b.classList.remove('active')});const t=document.getElementById('tab-'+m);t.style.borderColor='#58a6ff';t.style.background='#1a2230';t.style.color='#58a6ff';t.classList.add('active');document.getElementById('b64-action').textContent=m==='encode'?'🔒 Encode':'🔓 Decode';document.getElementById('b64-input').placeholder=m==='encode'?'Input要Encode的文字...':'Input Base64 字符串...';}
 function processB64(){
   const inp=document.getElementById('b64-input').value.trim();
