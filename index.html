@@ -5,13 +5,13 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠</text></svg>">
 <meta name="theme-color" content="#0d1117">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta property="og:title" content="Base64 Encoder / Decoder - 免费Online Tools — DevKit Tools">
-<meta property="og:description" content="在线 Base64 编Decode工具 - 文本/图片 Base64 EncodeDecode，支持文件Upload">
+<meta property="og:title" content="Base64 Encoder / Decoder - DevKit">
+<meta property="og:description" content="Online Base64 encoder/decoder — encode/decode text and images, with file upload support">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://479464887-rgb.github.io/base64-tool/">
 <meta name="twitter:card" content="summary_large_image">
-<title>Base64 Encoder / Decoder - 免费Online Tools</title>
-<meta name="description" content="在线 Base64 编Decode工具 - 文本/图片 Base64 EncodeDecode，支持文件Upload">
+<title>Base64 Encoder / Decoder - DevKit</title>
+<meta name="description" content="Online Base64 encoder/decoder — encode/decode text and images, with file upload support">
 <style>*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh;display:flex;flex-direction:column}
 header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
@@ -28,23 +28,23 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!import
 .btn{font-family:inherit}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Base64 Encoder / Decoder - 免费Online Tools","description":"在线 Base64 编Decode工具 - 文本/图片 Base64 EncodeDecode，支持文件Upload","url":"https://479464887-rgb.github.io/base64-tool/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"Base64 Encoder / Decoder - DevKit","description":"Online Base64 encoder/decoder — encode/decode text and images, with file upload support","url":"https://479464887-rgb.github.io/base64-tool/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 </head>
 <body>
 <header>
   <div class="logo">🛠 <span>Dev</span>Kit<span class="badge">BETA</span></div>
-  <div style="font-size:11px;color:#8b949e">🔒 Processed locally · 数据不Upload</div>
+  <div style="font-size:11px;color:#8b949e">🔒 Processed locally · No data uploaded</div>
 </header>
 <main>
   <h1 style="font-size:24px;margin-bottom:4px">Base64 Encoder / Decoder</h1>
-  <p style="color:#8b949e;font-size:14px;margin-bottom:8px">在线 Base64 编Decode工具 - 文本/图片 Base64 EncodeDecode，支持文件Upload</p>
+  <p style="color:#8b949e;font-size:14px;margin-bottom:8px">Online Base64 encoder/decoder — encode/decode text and images, with file upload support</p>
 <div class="tool-wrapper">
   <div style="display:flex;gap:4px;margin-bottom:12px">
     <button class="tab-btn active" onclick="switchTab('encode')" id="tab-encode" style="flex:1;padding:10px;border:1px solid #58a6ff;border-radius:6px 6px 0 0;background:#1a2230;color:#58a6ff;cursor:pointer;font-size:13px;font-weight:600">🔒 Encode (Encode)</button>
     <button class="tab-btn" onclick="switchTab('decode')" id="tab-decode" style="flex:1;padding:10px;border:1px solid #30363d;border-radius:6px 6px 0 0;background:#161b22;color:#8b949e;cursor:pointer;font-size:13px;font-weight:600">🔓 Decode (Decode)</button>
   </div>
-  <textarea id="b64-input" placeholder="Input要Encode的文字..." rows="6" style="width:100%;padding:16px;font-size:14px;border:1px solid #30363d;border-radius:0 0 8px 8px;background:#0d1117;color:#c9d1d9;resize:vertical;outline:none;font-family:mono;line-height:1.6"></textarea>
+  <textarea id="b64-input" placeholder="Enter text to encode..." rows="6" style="width:100%;padding:16px;font-size:14px;border:1px solid #30363d;border-radius:0 0 8px 8px;background:#0d1117;color:#c9d1d9;resize:vertical;outline:none;font-family:mono;line-height:1.6"></textarea>
   <div style="display:flex;gap:8px;margin:12px 0">
     <input type="file" id="b64-file" style="display:none" onchange="handleFile(this)">
     <button class="btn" style="padding:10px 20px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:8px;cursor:pointer;font-size:13px" onclick="document.getElementById('b64-file').click()">📁 Upload文件</button>
@@ -62,7 +62,7 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!import
 <script>
 'use strict';
 let mode='encode';
-function switchTab(m){mode=m;document.querySelectorAll('.tab-btn').forEach(b=>{b.style.borderColor='#30363d';b.style.background='#161b22';b.style.color='#8b949e';b.classList.remove('active')});const t=document.getElementById('tab-'+m);t.style.borderColor='#58a6ff';t.style.background='#1a2230';t.style.color='#58a6ff';t.classList.add('active');document.getElementById('b64-action').textContent=m==='encode'?'🔒 Encode':'🔓 Decode';document.getElementById('b64-input').placeholder=m==='encode'?'Input要Encode的文字...':'Input Base64 字符串...';}
+function switchTab(m){mode=m;document.querySelectorAll('.tab-btn').forEach(b=>{b.style.borderColor='#30363d';b.style.background='#161b22';b.style.color='#8b949e';b.classList.remove('active')});const t=document.getElementById('tab-'+m);t.style.borderColor='#58a6ff';t.style.background='#1a2230';t.style.color='#58a6ff';t.classList.add('active');document.getElementById('b64-action').textContent=m==='encode'?'🔒 Encode':'🔓 Decode';document.getElementById('b64-input').placeholder=m==='encode'?'Enter text to encode...':'Enter Base64 string...';}
 function processB64(){
   const inp=document.getElementById('b64-input').value.trim();
   if(!inp)return;
